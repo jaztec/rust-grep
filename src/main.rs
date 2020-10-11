@@ -7,7 +7,8 @@ fn main() -> Result<()> {
     let args: Vec<String> = std::env::args().collect();
 
     if args.len() == 1 {
-        return Err(invalid_arguments(&args))
+        println!("Usage: rust-grep [OPTION]... PATTERNS [FILE]...");
+        return Ok(())
     }
 
     let search = match regex::Regex::new(&args[1]) {
